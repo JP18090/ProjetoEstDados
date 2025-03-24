@@ -1,5 +1,4 @@
-
-
+package Projeto;
 class Vetor {
     Pais[] A; // Criando uma lista do tipo Pais
     int capacity; // Capacidade do vetor - comprimento máximo
@@ -75,7 +74,7 @@ class Vetor {
                 return i;
         return -1;  // Retorna -1 se não encontrar a sigla
     }
-
+    
     public void show() {
         // Mostra todo o conteúdo da lista
         for (int i = 0; i < size; i++) {
