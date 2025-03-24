@@ -10,7 +10,7 @@ public class Programa {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcao;
-        String arquivo = "dados.txt"; // Caminho do arquivo com dados
+        String arquivo = "Netflix.txt"; 
 
         do {
             System.out.println("Menu Principal:");
@@ -37,7 +37,7 @@ public class Programa {
                 case 4:
                     System.out.print("Digite a sigla do país: ");
                     String sigla = scanner.nextLine();
-                    consultarPorSigla(sigla);
+                    consultarPorSigla();
                     break;
                 case 5:
                     exibirEstatisticas();
