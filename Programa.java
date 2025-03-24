@@ -46,7 +46,12 @@ public class Programa {
                     exibirEstatisticas();
                     break;
                 case 6:
-                    System.out.println("Saindo...");
+                    System.out.println("Antes de sair fique com o nosso video sobre o codigo ");
+                    System.out.println("Link do video:");
+                    System.out.println("URL");
+                    System.out.println("\n------Integrantes-------");
+                    System.out.println("José Pedro Bitetti Tkatchuk - RA: 10427372");
+                    System.out.println("Vitor Costa Lemos - RA: 10438932");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
