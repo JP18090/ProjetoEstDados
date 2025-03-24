@@ -72,6 +72,7 @@ public class Programa {
 
                 paises[count++] = new Pais(sigla, pais, qtdeTitulos, qtdeShows, qtdeFilmes, tarifaBasica, tarifaStandard, tarifaPremium);
             }
+            System.out.println(ArqNetflix);
             System.out.println("Dados carregados com sucesso!");
         } catch (IOException e) {
             System.out.println("Erro ao carregar o arquivo: " + e.getMessage());
