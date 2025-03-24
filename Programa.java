@@ -1,3 +1,6 @@
+// Vitor Costa Lemos - RA: 10438932
+// José Pedro Bitetti Tkatchuk - RA: 10427372
+
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
@@ -22,7 +25,7 @@ public class Programa {
             System.out.println("6. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar buffer de entrada
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1:
@@ -53,8 +56,8 @@ public class Programa {
         scanner.close();
     }
 
-    public static void carregarDadosDoArquivo(String nomeArquivo) {
-        try (BufferedReader br = new BufferedReader(new FileReader(nomeArquivo))) {
+    public static void carregarDadosDoArquivo(String ArqNetflix) {
+        try (BufferedReader br = new BufferedReader(new FileReader(ArqNetflix))) {
             String linha;
             while ((linha = br.readLine()) != null && count < paises.length) {
                 String[] dados = linha.split(",");
