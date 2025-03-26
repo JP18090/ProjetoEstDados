@@ -33,17 +33,21 @@ public class Programa {
                     carregarDadosDoArquivo(arquivo);
                     break;
                 case 2:
+                    // Codado por JP
                     exibirEmOrdemAlfabetica();
                     break;
                 case 3:
+                    // Codado por Vitor
                     exibirPorQtdeTitulos();
                     break;
                 case 4:
+                    // Codado por JP
                     System.out.print("Digite a sigla do país: ");
                     String sigla = scanner.nextLine();
                     consultarPorSigla();
                     break;
                 case 5:
+                    // Codado por Vitor
                     exibirEstatisticas();
                     break;
                 case 6:
