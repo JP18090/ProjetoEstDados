@@ -91,15 +91,19 @@ public class Programa {
     }
 
     public static void exibirEmOrdemAlfabetica() {
-        Arrays.sort(paises, 0, count, Comparator.comparing(p -> p.pais));
+        Arrays.sort(paises, 0, count, (p1, p2) -> p1.pais.compareTo(p2.pais));
         for (int i = 0; i < count; i++) {
             System.out.println(paises[i]);
         }
     }
-
+    
     public static void exibirPorQtdeTitulos() {
-        
+        Arrays.sort(paises, 0, count, (p1, p2) -> Integer.compare(p2.qtdeTitulos, p1.qtdeTitulos));
+        for (int i = 0; i < count; i++) {
+            System.out.println(paises[i]);
+        }
     }
+    
 
     public static void consultarPorSigla(String sigla) {
        
