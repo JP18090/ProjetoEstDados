@@ -4,7 +4,6 @@ package Projeto;
 
 import java.io.*;
 import java.util.*;
-import java.util.Scanner;
 
 public class Programa {
     private static Pais[] paises = new Pais[100];
@@ -17,7 +16,7 @@ public class Programa {
         String arquivo = "Netflix.txt"; 
 
         do {
-            System.out.println("Menu Principal:");
+            System.out.println("\nMenu Principal:");
             System.out.println("1. Carregar dados do arquivo");
             System.out.println("2. Exibir todos os registros em ordem alfabética de país");
             System.out.println("3. Exibir todos os registros em ordem decrescente de qtde. títulos");
@@ -41,14 +40,17 @@ public class Programa {
                     exibirPorQtdeTitulos();
                     break;
                 case 4:
-                    // Codado por JP
+                    // Codado por Vitor
                     System.out.print("Digite a sigla do país: ");
                     String sigla = scanner.nextLine();
-                    consultarPorSigla();
+                    consultarPorSigla(sigla);
                     break;
                 case 5:
-                    // Codado por Vitor
+                    // Codado por JP
                     exibirEstatisticas();
+                    //Valor médio das tarifas 
+                    //Valor medio de shows e filmes por pais 
+                    //Quantidade total de títulos
                     break;
                 case 6:
                     System.out.println("Antes de sair fique com o nosso video sobre o codigo ");
@@ -88,17 +90,42 @@ public class Programa {
         }
     }
 
-    public static void exibirEmOrdemAlfabetica(){
-
-    }
-    public static void exibirPorQtdeTitulos(){
-
-    }
-    public static void consultarPorSigla(){
-
-    }
-    public static void exibirEstatisticas(){
-
+    public static void exibirEmOrdemAlfabetica() {
+        Arrays.sort(paises, 0, count, Comparator.comparing(p -> p.pais));
+        for (int i = 0; i < count; i++) {
+            System.out.println(paises[i]);
+        }
     }
 
+    public static void exibirPorQtdeTitulos() {
+        
+    }
+
+    public static void consultarPorSigla(String sigla) {
+       
+    }
+
+    public static void exibirEstatisticas() {
+        double somaTarifas = 0;
+        int totalTitulos = 0;
+        int totalShows = 0;
+        int totalFilmes = 0;
+
+        for (int i = 0; i < count; i++) {
+            somaTarifas += (paises[i].tarifaBasica + paises[i].tarifaStandard + paises[i].tarifaPremium) / 3;
+            totalTitulos += paises[i].qtdeTitulos;
+            totalShows += paises[i].qtdeShows;
+            totalFilmes += paises[i].qtdeFilmes;
+        }
+
+        double mediaTarifas = Math.round((somaTarifas / count) * 100.0) / 100.0;
+        double mediaShows = Math.round(((double) totalShows / count) * 100.0) / 100.0;
+        double mediaFilmes = Math.round(((double) totalFilmes / count) * 100.0) / 100.0;
+
+        System.out.println("Estatísticas:");
+        System.out.println("Valor médio das tarifas: " + mediaTarifas);
+        System.out.println("Média de shows por país: " + mediaShows);
+        System.out.println("Média de filmes por país: " + mediaFilmes);
+        System.out.println("Quantidade total de títulos: " + totalTitulos);
+    }
 }

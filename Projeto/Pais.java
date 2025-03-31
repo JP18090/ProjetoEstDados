@@ -30,4 +30,6 @@ public class Pais {
                ", Tarifa Básica: " + tarifaBasica + ", Tarifa Standard: " + tarifaStandard +
                ", Tarifa Premium: " + tarifaPremium;
     }
+
+    
 }
