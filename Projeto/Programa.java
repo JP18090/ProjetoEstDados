@@ -27,6 +27,10 @@ public class Programa {
             opcao = scanner.nextInt();
             scanner.nextLine(); 
 
+            if (opcao != 1 && paises == null) {
+                System.out.println("O arquivo ainda não foi carregado. Escolha a opção 1 primeiro.");
+                continue;
+            }
             switch (opcao) {
                 case 1:
                     // Codado por JP
