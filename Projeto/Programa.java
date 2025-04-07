@@ -29,6 +29,7 @@ public class Programa {
 
             switch (opcao) {
                 case 1:
+                    // Codado por JP
                     carregarDadosDoArquivo(arquivo);
                     break;
                 case 2:
@@ -106,7 +107,13 @@ public class Programa {
     
 
     public static void consultarPorSigla(String sigla) {
-       
+        for (int i = 0; i < count; i++) {
+            if (paises[i].sigla.equalsIgnoreCase(sigla)) {
+                System.out.println(paises[i]);
+                return;
+            }
+        }
+        System.out.println("País não encontrado.");
     }
 
     public static void exibirEstatisticas() {
