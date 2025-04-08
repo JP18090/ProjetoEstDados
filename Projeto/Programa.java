@@ -112,18 +112,20 @@ public class Programa {
     }
     
     public static void exibirPorQtdeTitulos() {
+        // Bubble Sort para ordenar o array 'paises' por qtdeTitulos (decrescente)
         for (int i = 0; i < count - 1; i++) {
-            int maxIdx = i;
-            for (int j = i + 1; j < count; j++) {
-                if (paises[j].qtdeTitulos > paises[maxIdx].qtdeTitulos) {
-                    maxIdx = j;
+            for (int j = 0; j < count - 1 - i; j++) {
+                if (paises[j].qtdeTitulos < paises[j + 1].qtdeTitulos) {
+                    // Troca os elementos
+                    Pais temp = paises[j];
+                    paises[j] = paises[j + 1];
+                    paises[j + 1] = temp;
                 }
             }
-            Pais temp = paises[i];
-            paises[i] = paises[maxIdx];
-            paises[maxIdx] = temp;
         }
     
+    
+        System.out.println("Países ordenados por quantidade de títulos (ordem decrescente):");
         for (int i = 0; i < count; i++) {
             System.out.println(paises[i]);
         }
@@ -132,14 +134,25 @@ public class Programa {
     
 
     public static void consultarPorSigla(String sigla) {
+        // Percorre todos os elementos do array de países, até o total carregado (count)
         for (int i = 0; i < count; i++) {
+    
+            // Verifica se a sigla do país na posição i é igual à sigla passada como argumento
+            // equalsIgnoreCase ignora se está em maiúscula ou minúscula (por exemplo, "br" == "BR")
             if (paises[i].sigla.equalsIgnoreCase(sigla)) {
+    
+                // Se encontrar a sigla, imprime os dados do país (usa o método toString da classe Pais)
                 System.out.println(paises[i]);
+    
+                // Sai do método após encontrar o país (não precisa continuar procurando)
                 return;
             }
         }
+    
+        // Se o laço terminar sem encontrar nenhuma correspondência, mostra mensagem de erro
         System.out.println("País não encontrado.");
     }
+    
 
     public static void exibirEstatisticas() {
         double somaTarifas = 0;
