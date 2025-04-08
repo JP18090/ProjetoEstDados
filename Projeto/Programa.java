@@ -96,18 +96,38 @@ public class Programa {
     }
 
     public static void exibirEmOrdemAlfabetica() {
-        Arrays.sort(paises, 0, count, (p1, p2) -> p1.pais.compareTo(p2.pais));
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; j < count - 1 - i; j++) {
+                if (paises[j].pais.compareTo(paises[j + 1].pais) > 0) {
+                    Pais temp = paises[j];
+                    paises[j] = paises[j + 1];
+                    paises[j + 1] = temp;
+                }
+            }
+        }
         for (int i = 0; i < count; i++) {
             System.out.println(paises[i]);
         }
     }
     
     public static void exibirPorQtdeTitulos() {
-        Arrays.sort(paises, 0, count, (p1, p2) -> Integer.compare(p2.qtdeTitulos, p1.qtdeTitulos));
+        for (int i = 0; i < count - 1; i++) {
+            int maxIdx = i;
+            for (int j = i + 1; j < count; j++) {
+                if (paises[j].qtdeTitulos > paises[maxIdx].qtdeTitulos) {
+                    maxIdx = j;
+                }
+            }
+            Pais temp = paises[i];
+            paises[i] = paises[maxIdx];
+            paises[maxIdx] = temp;
+        }
+    
         for (int i = 0; i < count; i++) {
             System.out.println(paises[i]);
         }
     }
+    
     
 
     public static void consultarPorSigla(String sigla) {
